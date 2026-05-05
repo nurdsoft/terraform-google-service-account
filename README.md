@@ -133,6 +133,7 @@ $ git push --set-upstream origin feat/abc
 | display\_name | A human-readable name for the service account | `string` | `""` | no |
 | description | A human-readable description of the service account | `string` | `""` | no |
 | roles | List of IAM roles to bind to the service account at the project level | `list(string)` | `[]` | no |
+| account\_key | Whether to create a service account key. The private key will be available in the `service_account_key` output and stored in Terraform state | `bool` | `false` | no |
 
 ## Outputs
 
@@ -141,6 +142,7 @@ $ git push --set-upstream origin feat/abc
 | service\_account\_email | The email address of the service account |
 | service\_account\_id | The fully-qualified name of the service account (`projects/{project}/serviceAccounts/{email}`) |
 | service\_account\_name | The resource name of the service account |
+| service\_account\_key | The base64-encoded private key of the service account. Only populated when `account_key = true` |
 
 ## Authors
 

@@ -12,3 +12,8 @@ resource "google_project_iam_member" "this" {
   role    = each.value
   member  = "serviceAccount:${google_service_account.this.email}"
 }
+
+resource "google_service_account_key" "this" {
+  count              = var.account_key ? 1 : 0
+  service_account_id = google_service_account.this.name
+}

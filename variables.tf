@@ -25,3 +25,9 @@ variable "roles" {
   type        = list(string)
   default     = []
 }
+
+variable "account_key" {
+  description = "Whether to create a service account key. The private key will be available in the service_account_key output and stored in Terraform state."
+  type        = bool
+  default     = false
+}
