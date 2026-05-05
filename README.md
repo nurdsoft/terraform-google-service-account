@@ -77,7 +77,7 @@ module "service_account" {
 ## Assumptions
 
 - A basic understanding of [Git](https://git-scm.com/). Git version `>= 2.33.0`.
-- An existing GCP IAM user or role with permission to create/update/delete `google_service_account` and `google_project_iam_member` resources.
+- An existing GCP IAM user or role with permission to create/update/delete `google_service_account` and `google_project_iam_member` resources. When `account_key = true`, the `iam.serviceAccountKeys.create` permission is also required.
 - [GCloud CLI](https://cloud.google.com/sdk/docs/install) `>= 465.0.0`
 - A basic understanding of [Terraform](https://www.terraform.io/). Terraform version `>= 1.3`.
 - (Optional - for local testing) A basic understanding of [Make](https://www.gnu.org/software/make/manual/make.html#Introduction).
