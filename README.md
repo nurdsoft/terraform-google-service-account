@@ -129,7 +129,7 @@ $ git push --set-upstream origin feat/abc
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | project\_id | The GCP project ID where the service account will be created | `string` | n/a | yes |
-| account\_id | The account ID of the service account. Must be 6-30 characters, lowercase letters, numbers, and hyphens; must start with a letter | `string` | n/a | yes |
+| account\_id | The account ID of the service account | `string` | n/a | yes |
 | display\_name | A human-readable name for the service account | `string` | `""` | no |
 | description | A human-readable description of the service account | `string` | `""` | no |
 | roles | List of IAM roles to bind to the service account at the project level | `list(string)` | `[]` | no |
