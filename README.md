@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Terraform module provisions a GCP service account using `google_service_account` and optionally binds it to one or more project-level IAM roles using `google_project_iam_member`. It standardises service account provisioning and IAM binding across projects so that these resources do not need to be defined as inline raw resources in each project's deploy configuration.
+This Terraform module provisions a GCP service account using `google_service_account`, optionally binds it to one or more project-level IAM roles using `google_project_iam_member`, and optionally creates a service account key using `google_service_account_key`. It standardises service account provisioning and IAM binding across projects so that these resources do not need to be defined as inline raw resources in each project's deploy configuration.
 
 ## Usage
 
@@ -35,6 +35,25 @@ module "service_account" {
 }
 ```
 
+`With service account key`:
+
+```hcl
+module "service_account" {
+  source = "git::https://github.com/nurdsoft/terraform-google-service-account.git?ref=v1.0.0"
+
+  project_id   = "my-gcp-project"
+  account_id   = "firebase-admin-sa"
+  display_name = "Firebase Admin service account"
+  description  = "Service account for Firebase Admin SDK access."
+
+  roles = [
+    "roles/firebase.admin",
+  ]
+
+  account_key = true
+}
+```
+
 `Complete`:
 
 ```hcl
@@ -50,6 +69,8 @@ module "service_account" {
     "roles/logging.bucketWriter",
     "roles/storage.objectCreator",
   ]
+
+  account_key = true
 }
 ```
 
