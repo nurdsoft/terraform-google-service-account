@@ -50,11 +50,6 @@ module "service_account" {
     "roles/logging.bucketWriter",
     "roles/storage.objectCreator",
   ]
-
-  labels = {
-    env  = "production"
-    team = "platform"
-  }
 }
 ```
 
@@ -138,7 +133,6 @@ $ git push --set-upstream origin feat/abc
 | display\_name | A human-readable name for the service account | `string` | `""` | no |
 | description | A human-readable description of the service account | `string` | `""` | no |
 | roles | List of IAM roles to bind to the service account at the project level | `list(string)` | `[]` | no |
-| labels | Labels to apply to the service account | `map(string)` | `{}` | no |
 
 ## Outputs
 

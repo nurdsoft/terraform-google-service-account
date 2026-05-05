@@ -30,9 +30,3 @@ variable "roles" {
   type        = list(string)
   default     = []
 }
-
-variable "labels" {
-  description = "Labels to apply to the service account."
-  type        = map(string)
-  default     = {}
-}

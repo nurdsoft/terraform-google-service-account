@@ -9,9 +9,4 @@ module "service_account" {
   roles = [
     "roles/logging.bucketWriter",
   ]
-
-  labels = {
-    env  = "production"
-    team = "platform"
-  }
 }

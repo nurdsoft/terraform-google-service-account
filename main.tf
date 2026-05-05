@@ -3,7 +3,6 @@ resource "google_service_account" "this" {
   account_id   = var.account_id
   display_name = var.display_name
   description  = var.description
-  labels       = var.labels
 }
 
 resource "google_project_iam_member" "this" {
